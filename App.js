@@ -1,13 +1,11 @@
 import { StatusBar } from "expo-status-bar"
-import { StyleSheet, Text, View, SafeAreaView } from "react-native"
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native"
 
 export default function App() {
-  console.log("app executed")
+  console.log(require("./assets/icon.png"))
 
-  // let x
   const handleTextPress = () => console.log("text pressed")
-  
-  // x.toString()
+
   return (
     // SafeAreaView adds padding to top of component
     <SafeAreaView style={styles.container}>
@@ -17,10 +15,14 @@ export default function App() {
           handleTextPress()
         }}
       >
-        App.js component lease feel free to make this into a Google Doc - I just
-        know you have preferred format so defer lease feel free to make this
-        into a Google Doc
+        Welcome to React Native
       </Text>
+      <Image
+        source={{
+          uri: "https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk",
+        }}
+        style={styles.image}
+      />
       <StatusBar style="auto" />
     </SafeAreaView>
   )
@@ -31,6 +33,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "dodgerblue",
     alignItems: "center",
-    // justifyContent: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: 200,
+    height: 300,
   },
 })
